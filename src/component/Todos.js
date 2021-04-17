@@ -1,15 +1,11 @@
 import ToDoItem from './ToDoItem';
 
-
-const Todos = ({ todos }) => {
+const Todos = ({ todos, onDelete }) => {
 	return (<div className="container">
 		<h1 className="text-center"> Todo's List </h1>
-		{		todos.map((todo) => {
-			return <ToDoItem todo={todo} />
+		{todos.map((todo) => {
+			return <ToDoItem todo={todo} key={todo.sno} onDelete={onDelete}/>
 		})}
-
-		<button type="button" class="btn btn-danger btn-sm">Delete</button>
-
 	</div>);
 }
 

@@ -25,13 +25,17 @@ function App() {
 			desc: "complete Mern"
 		}
 	]
+
+	const onDelete = (todo) => {
+    console.log("I am ondelete of todo", todo);
+	}
 	return (
 		<>
 			{/* <UseStateLearn name="Data"/> */}
 			{/* <Form /> */}
 			{/* <UseEffectLearn /> */}
 			<Header title="Todo's List" searchBar={true} />
-			<Todos todos={todos}/>
+			<Todos todos={todos} onDelete={onDelete} />
 			<Footer />
 		</>
 	);
