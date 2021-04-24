@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './App.css';
 // import UseStateLearn from "./component/UseStateLearn";
 // import Form from "./component/Form";
@@ -10,32 +10,24 @@ import AddTodo from './component/AddTodo';
 
 
 function App() {
-	let [todos, setTodos] = useState([
-		{
-			sno: "1",
-			title: "Hello title 1",
-			desc: "complete React"
-		},
-		{
-			sno: "2",
-			title: "Hello title 2",
-			desc: "complete AWS"
-		},
-		{
-			sno: "3",
-			title: "Hello title 3",
-			desc: "complete Mern"
-		}
-	]);
+	let initTodo;
+	if (localStorage.getItem("todos") === null) {
+		initTodo = [];
+	}
+	else {
+		initTodo = JSON.parse(localStorage.getItem("todos"));
+	}
 
 	const onDelete = (todo) => {
 		console.log("I am ondelete of todo", todo);
+
 		setTodos(todos.filter((e) => {
 			return e !== todo;
-		}))
-		console.log("🚀 ~ file: App.js ~ line 33 ~ setTodos ~ setTodos", setTodos.legth)
-
+		}));
+		console.log("deleted", todos)
+		localStorage.setItem("todos", JSON.stringify(todos));
 	}
+
 	const addTodo = (title, desc) => {
 		console.log("I am adding this todo", title, desc)
 		let sno;
@@ -53,6 +45,12 @@ function App() {
 		setTodos([...todos, myTodo]);
 		console.log(myTodo);
 	}
+
+	const [todos, setTodos] = useState(initTodo);
+	useEffect(() => {
+		localStorage.setItem("todos", JSON.stringify(todos));
+	}, [todos])
+
 	return (
 		<>
 			{/* <UseStateLearn name="Data"/> */}
