@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 // import UseStateLearn from "./component/UseStateLearn";
 // import Form from "./component/Form";
@@ -7,6 +7,13 @@ import Header from './component/Header';
 import Footer from './component/Footer';
 import Todos from './component/Todos';
 import AddTodo from './component/AddTodo';
+import About from './component/About';
+
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route
+} from "react-router-dom";
 
 
 function App() {
@@ -19,17 +26,14 @@ function App() {
 	}
 
 	const onDelete = (todo) => {
-		console.log("I am ondelete of todo", todo);
 
 		setTodos(todos.filter((e) => {
 			return e !== todo;
 		}));
-		console.log("deleted", todos)
 		localStorage.setItem("todos", JSON.stringify(todos));
 	}
 
 	const addTodo = (title, desc) => {
-		console.log("I am adding this todo", title, desc)
 		let sno;
 		if (todos.length === 0) {
 			sno = 0;
@@ -43,7 +47,6 @@ function App() {
 			desc: desc,
 		}
 		setTodos([...todos, myTodo]);
-		console.log(myTodo);
 	}
 
 	const [todos, setTodos] = useState(initTodo);
@@ -53,13 +56,26 @@ function App() {
 
 	return (
 		<>
-			{/* <UseStateLearn name="Data"/> */}
-			{/* <Form /> */}
-			{/* <UseEffectLearn /> */}
-			<Header title="Todo's List" searchBar={true} />
-			<AddTodo addTodo={addTodo} />
-			<Todos todos={todos} onDelete={onDelete} />
-			<Footer />
+			<Router>
+				{/* <UseStateLearn name="Data"/> */}
+				{/* <Form /> */}
+				{/* <UseEffectLearn /> */}
+				<Header title="Todo's List" searchBar={false} />
+				<Switch>
+					<Route exact path="/" render={() => {
+						return (
+							<>
+								<AddTodo addTodo={addTodo} />
+								<Todos todos={todos} onDelete={onDelete} />
+							</>)
+					}}>
+					</Route>
+					<Route exact path="/about">
+						<About />
+					</Route>
+				</Switch>
+				<Footer />
+			</Router>
 		</>
 	);
 }

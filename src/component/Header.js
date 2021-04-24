@@ -1,11 +1,13 @@
 /* eslint-disable react/no-typos */
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from "react-router-dom";
 
 const Header = ({ title, searchBar }) => {
+	//replace "a" tag with Link and "href" tag with to 
 	return (<>
 		<nav className="navbar navbar-expand-lg navbar-light bg-light">
-			<a className="navbar-brand" href="#">{title}</a>
+			<Link className="navbar-brand" to="/">{title}</Link>
 			<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span className="navbar-toggler-icon"></span>
 			</button>
@@ -13,10 +15,10 @@ const Header = ({ title, searchBar }) => {
 			<div className="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul className="navbar-nav mr-auto">
 					<li className="nav-item active">
-						<a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+						<Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
 					</li>
 					<li className="nav-item">
-						<a className="nav-link" href="#">About</a>
+						<Link className="nav-link" to="/about">About</Link>
 					</li>
 				</ul>
 				{searchBar ? <form className="form-inline my-2 my-lg-0">
@@ -27,11 +29,11 @@ const Header = ({ title, searchBar }) => {
 		</nav>
 	</>);
 }
-export default Header; 
+export default Header;
 
-Header.defaultProps={
-	title:"Your title here",
-	searchBar:true
+Header.defaultProps = {
+	title: "Your title here",
+	searchBar: true
 }
 Header.PropTypes = {
 	title: PropTypes.string,
