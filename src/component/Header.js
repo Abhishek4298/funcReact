@@ -20,6 +20,9 @@ const Header = ({ title, searchBar }) => {
 					<li className="nav-item">
 						<Link className="nav-link" to="/about">About</Link>
 					</li>
+					<li className="nav-item active">
+						<Link className="nav-link" to="/shop">Shop <span className="sr-only">(current)</span></Link>
+					</li>
 				</ul>
 				{searchBar ? <form className="form-inline my-2 my-lg-0">
 					<input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />

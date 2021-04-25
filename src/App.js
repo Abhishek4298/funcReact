@@ -8,6 +8,8 @@ import Footer from './component/Footer';
 import Todos from './component/Todos';
 import AddTodo from './component/AddTodo';
 import About from './component/About';
+import Shop from './component/Shop';
+import FlowerAbout from './component/FlowerAbout';
 
 import {
 	BrowserRouter as Router,
@@ -60,9 +62,9 @@ function App() {
 				{/* <UseStateLearn name="Data"/> */}
 				{/* <Form /> */}
 				{/* <UseEffectLearn /> */}
-				<Header title="Todo's List" searchBar={false} />
+				<Header title="Dhaval Pandya" searchBar={false} />
 				<Switch>
-					<Route exact path="/" render={() => {
+					{/* <Route exact path="/" render={() => {
 						return (
 							<>
 								<AddTodo addTodo={addTodo} />
@@ -72,6 +74,15 @@ function App() {
 					</Route>
 					<Route exact path="/about">
 						<About />
+					</Route> */}
+					<Route exact path="/">
+						<FlowerAbout />
+					</Route>
+					<Route exact path="/about">
+						<FlowerAbout />
+					</Route>
+					<Route exact path="/shop">
+						<Shop />
 					</Route>
 				</Switch>
 				<Footer />
