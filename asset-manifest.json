@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Abhishek4298/funcReact.git/static/css/main.42cdebed.chunk.css",
+    "main.js": "/Abhishek4298/funcReact.git/static/js/main.5e5ba186.chunk.js",
+    "main.js.map": "/Abhishek4298/funcReact.git/static/js/main.5e5ba186.chunk.js.map",
+    "runtime-main.js": "/Abhishek4298/funcReact.git/static/js/runtime-main.807a2c81.js",
+    "runtime-main.js.map": "/Abhishek4298/funcReact.git/static/js/runtime-main.807a2c81.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/Abhishek4298/funcReact.git/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.297cbeef.chunk.js": "/Abhishek4298/funcReact.git/static/js/2.297cbeef.chunk.js",
+    "static/js/2.297cbeef.chunk.js.map": "/Abhishek4298/funcReact.git/static/js/2.297cbeef.chunk.js.map",
+    "static/js/3.72930b44.chunk.js": "/Abhishek4298/funcReact.git/static/js/3.72930b44.chunk.js",
+    "static/js/3.72930b44.chunk.js.map": "/Abhishek4298/funcReact.git/static/js/3.72930b44.chunk.js.map",
+    "index.html": "/Abhishek4298/funcReact.git/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/Abhishek4298/funcReact.git/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.42cdebed.chunk.css.map": "/Abhishek4298/funcReact.git/static/css/main.42cdebed.chunk.css.map",
+    "static/js/2.297cbeef.chunk.js.LICENSE.txt": "/Abhishek4298/funcReact.git/static/js/2.297cbeef.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.807a2c81.js",
+    "static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.297cbeef.chunk.js",
+    "static/css/main.42cdebed.chunk.css",
+    "static/js/main.5e5ba186.chunk.js"
+  ]
+}
