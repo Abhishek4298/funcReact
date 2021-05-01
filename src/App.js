@@ -10,6 +10,7 @@ import AddTodo from './component/AddTodo';
 import About from './component/About';
 import Shop from './component/Shop';
 import FlowerAbout from './component/FlowerAbout';
+import SingleProduct from './component/SingleProduct';
 
 import {
 	BrowserRouter as Router,
@@ -84,6 +85,10 @@ function App() {
 					<Route exact path="/shop">
 						<Shop />
 					</Route>
+					<Route exact path="/singleProduct">
+					<SingleProduct />
+					</Route>
+
 				</Switch>
 				<Footer />
 			</Router>
