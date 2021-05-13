@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import AnalogClock from 'analog-clock-react';
-import { createMuiTheme } from '@material-ui/core/styles';
 
 const Clock = () => {
     // For digital clock
@@ -14,13 +13,13 @@ const Clock = () => {
         width: "300px",
         border: true,
         borderColor: "#2e2e2e",
-        baseColor: "#17a2b8",
+        baseColor: "black",
         centerColor: "#459cff",
         centerBorderColor: "#fff",
         handColors: {
             second: "#d81c7a",
-            minute: "#fff",
-            hour: "#fff"
+            minute: "limegreen",
+            hour: "limegreen"
         }
     };
 
