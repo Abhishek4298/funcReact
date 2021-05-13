@@ -4,6 +4,22 @@ code {
 		monospace;
 }
 
+.clock {
+  height: 20vh;
+  width: 40%;
+  color:white;
+  background-color: #17a2b8;
+  outline-color: blue;
+  font-size: 9vh;
+  font-family: sans-serif;
+  line-height: 10.4vh;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  padding-top: 0.5cm;
+  padding-left: 2cm;
+  border: 15px solid #000000;
+}
 
 /*FOOTER*/
 
@@ -469,3 +485,5 @@ img {
     opacity: 1;
     -webkit-transform: scale(1);
             transform: scale(1); } }
+
+

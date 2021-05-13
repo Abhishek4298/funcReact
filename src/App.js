@@ -11,6 +11,7 @@ import About from './component/About';
 import Shop from './component/Shop';
 import FlowerAbout from './component/FlowerAbout';
 import SingleProduct from './component/SingleProduct';
+import Clock from './component/Clock';
 
 import {
 	BrowserRouter as Router,
@@ -63,7 +64,7 @@ function App() {
 				{/* <UseStateLearn name="Data"/> */}
 				{/* <Form /> */}
 				{/* <UseEffectLearn /> */}
-				<Header title="Dhaval Pandya" searchBar={false} />
+				<Header title="Abhishek" searchBar={false} />
 				<Switch>
 					{/* <Route exact path="/" render={() => {
 						return (
@@ -86,11 +87,14 @@ function App() {
 						<Shop />
 					</Route>
 					<Route exact path="/singleProduct">
-					<SingleProduct />
+						<SingleProduct />
 					</Route>
-
+					<Route exact path="/clock">
+						<Clock />
+					</Route>
 				</Switch>
 				<Footer />
+
 			</Router>
 		</>
 	);
