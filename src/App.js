@@ -63,14 +63,24 @@ function App() {
 			{
 				ab_no: 1,
 				ab_name: "Abhishek",
-				ab_post: "ab",
-				ab_email: "av"
+				ab_post: "Software Engineer",
+				ab_email: "abhishek.bhavsar@bacancy.com",
+				ab_image: <img className="photo" src="https://1.bp.blogspot.com/-Ybb3sd6z49Y/X8iVAuWrpvI/AAAAAAAAV0w/IYrlua9yum4WBerYjdeMaaWUjlZ_ezWPQCLcBGAsYHQ/s1920/Allu%2BArjun.jpg" alt="Image" styles="width:100%" />
+
 			},
 			{
 				ab_no: 2,
-				ab_name: "Dars",
-				ab_post: "dars",
-				ab_email: "dar"
+				ab_name: "Darshan",
+				ab_post: "Sr. Software Engineer",
+				ab_email: "darshan.gauswami@bacancy.com",
+				ab_image: <img className="photo" src="https://1.bp.blogspot.com/-Ybb3sd6z49Y/X8iVAuWrpvI/AAAAAAAAV0w/IYrlua9yum4WBerYjdeMaaWUjlZ_ezWPQCLcBGAsYHQ/s1920/Allu%2BArjun.jpg" alt="Image" styles="width:100%" />
+			},
+			{
+				ab_no: 3,
+				ab_name: "Nikita",
+				ab_post: "Sr. Software Engineer",
+				ab_email: "nikita.bhangadiya@bacancy.com.com",
+				ab_image: <img className="photo" src="https://1.bp.blogspot.com/-Ybb3sd6z49Y/X8iVAuWrpvI/AAAAAAAAV0w/IYrlua9yum4WBerYjdeMaaWUjlZ_ezWPQCLcBGAsYHQ/s1920/Allu%2BArjun.jpg" alt="Image" styles="width:100%" />
 			},
 		]
 
