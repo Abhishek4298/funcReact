@@ -58,6 +58,22 @@ function App() {
 		localStorage.setItem("todos", JSON.stringify(todos));
 	}, [todos])
 
+	const about_page =
+		[
+			{
+				ab_no: 1,
+				ab_name: "Abhishek",
+				ab_post: "ab",
+				ab_email: "av"
+			},
+			{
+				ab_no: 2,
+				ab_name: "Dars",
+				ab_post: "dars",
+				ab_email: "dar"
+			},
+		]
+
 	return (
 		<>
 			<Router>
@@ -77,12 +93,14 @@ function App() {
 					<Route exact path="/about">
 						<About />
 					</Route> */}
-					<Route exact path="/">
-						<FlowerAbout />
+					<Route exact path="/about" render={() => {
+						return (
+							<>
+								<FlowerAbout about_page={about_page} />
+							</>)
+					}}>
 					</Route>
-					<Route exact path="/about">
-						<FlowerAbout />
-					</Route>
+
 					<Route exact path="/shop">
 						<Shop />
 					</Route>
