@@ -2,10 +2,13 @@ import React, { useState } from 'react'
 
 const Clock = ({ theme }) => {
 	// For digital clock
-	const [time, setTime] = useState('');
-	setInterval(() => {
-		setTime(new Date().toLocaleTimeString())
-	}, 1000);
+	let time = new Date().toLocaleTimeString();
+	let [ctime, setCTime] = useState();
+	const updateTime = () => {
+		time = new Date().toLocaleTimeString();
+		setCTime(time);
+	}
+	setInterval(updateTime, 1000);
 
 	// Theme
 	let [myTheme, setmyTheme] = useState(theme);
@@ -22,7 +25,7 @@ const Clock = ({ theme }) => {
 					<span className="switch-handle"></span>
 				</label>
 				<h1>Current Time</h1>
-				<h2 className="clock">{new Date().toLocaleTimeString()}.</h2>
+				<h2 className="clock">{ctime}</h2>
 			</div>
 		</>);
 }
