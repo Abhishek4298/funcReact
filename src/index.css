@@ -21,6 +21,14 @@ code {
 }
 
 /* Theme */
+.lightTheme {
+	background-color: grey;
+}
+.darkTheme {
+	background-color:black;
+}
+
+
 
 html,
 body,

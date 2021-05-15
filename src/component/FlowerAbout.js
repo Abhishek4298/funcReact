@@ -13,7 +13,7 @@ const FlowerAbout = ({ about_page }) => {
 			{
 				about_page.map((about) => {
 					return (
-						<div className="column">
+						<div className="column" key={about.ab_no}>
 							<div className="card">
 								<div className="container">
 									<h1>{about.ab_name}</h1>

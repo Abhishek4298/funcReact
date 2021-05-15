@@ -117,8 +117,12 @@ function App() {
 					<Route exact path="/singleProduct">
 						<SingleProduct />
 					</Route>
-					<Route exact path="/clock">
-						<Clock />
+					<Route exact path="/clock" render={() => {
+						return (
+							<>
+								<Clock theme="lightTheme" />
+							</>)
+					}}>
 					</Route>
 				</Switch>
 				<Footer />
