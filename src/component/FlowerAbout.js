@@ -1,7 +1,9 @@
 import SingleProduct from './SingleProduct';
+import React, { useState } from 'react';
+
 
 const FlowerAbout = ({ about_page }) => {
-	let data
+	const [contact, setContact] = useState({});	
 	return (<>
 		<div className="about-section">
 			<h1>About Us Page</h1>
@@ -19,8 +21,9 @@ const FlowerAbout = ({ about_page }) => {
 									<h1>{about.ab_name}</h1>
 									<h3>{about.ab_post}</h3>
 									{about.ab_image}
-									<p><button className="button" onClick="">Contact</button></p>
-								</div>
+									<p><button className="button" onClick={() => setContact(about)}>Contact</button></p>
+									{about.ab_no === contact.ab_no && (<span>{contact.ab_contact}</span>)}
+								</div>	
 							</div>
 						</div>
 					)

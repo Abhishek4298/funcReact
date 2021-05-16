@@ -21,7 +21,7 @@ const Clock = ({ theme }) => {
 			<div className={`container ${myTheme}`}>
 				<label className="switch">
 					<input onChange={handleDayNightToggle} type="checkbox" className="switch-input" />
-					<span className="switch-label" data-on="On" data-off="Off"></span>
+					<span className="switch-label" data-on="Light" data-off="Dark"></span>
 					<span className="switch-handle"></span>
 				</label>
 				<h1>Current Time</h1>

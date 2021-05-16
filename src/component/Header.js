@@ -41,7 +41,8 @@ Header.defaultProps = {
 	title: "Your title here",
 	searchBar: true
 }
-Header.PropTypes = {
+
+Header.propTypes = {
 	title: PropTypes.string,
 	searchBar: PropTypes.bool
 }
