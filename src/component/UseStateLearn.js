@@ -17,10 +17,10 @@ const UseStateLearn = ({ name }) => {
 	return (
 		<>
 			<h1>Registration {name} </h1>
-			<button onClick={counterAdd} type="button" class="btn btn-primary">+</button>
+			<button onClick={counterAdd} type="button" className="btn btn-primary">+</button>
 			{count}
-			<button onClick={counterMinus} type="button" class="btn btn-primary">-</button><br/><br/>
-			<button onClick={stringChange} type="button" class="btn btn-success">Text Change</button>
+			<button onClick={counterMinus} type="button" className="btn btn-primary">-</button><br/><br/>
+			<button onClick={stringChange} type="button" className="btn btn-success">Text Change</button>
 			<br/>
 			<h2>{myString} </h2>
 		</>);

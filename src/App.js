@@ -12,6 +12,8 @@ import Shop from './component/Shop';
 import FlowerAbout from './component/FlowerAbout';
 import SingleProduct from './component/SingleProduct';
 import Clock from './component/Clock';
+import Login from '../src/component/Login/Login';
+import useToken from './useToken';
 
 import {
 	BrowserRouter as Router,
@@ -22,6 +24,8 @@ import {
 
 function App() {
 	let initTodo;
+
+
 	if (localStorage.getItem("todos") === null) {
 		initTodo = [];
 	}
@@ -65,7 +69,7 @@ function App() {
 				ab_post: "Software Engineer",
 				ab_email: "abhishek.bhavsar@bacancy.com",
 				ab_image: <img className="photo" src="https://1.bp.blogspot.com/-Ybb3sd6z49Y/X8iVAuWrpvI/AAAAAAAAV0w/IYrlua9yum4WBerYjdeMaaWUjlZ_ezWPQCLcBGAsYHQ/s1920/Allu%2BArjun.jpg" alt="Image" styles="width:100%" />,
-				ab_contact:"7227885771"
+				ab_contact: "7227885771"
 			},
 			{
 				ab_no: 2,
@@ -73,7 +77,7 @@ function App() {
 				ab_post: "Sr. Software Engineer",
 				ab_email: "darshan.gauswami@bacancy.com",
 				ab_image: <img className="photo" src="https://1.bp.blogspot.com/-Ybb3sd6z49Y/X8iVAuWrpvI/AAAAAAAAV0w/IYrlua9yum4WBerYjdeMaaWUjlZ_ezWPQCLcBGAsYHQ/s1920/Allu%2BArjun.jpg" alt="Image" styles="width:100%" />,
-				ab_contact:"8141393254"
+				ab_contact: "8141393254"
 			},
 			{
 				ab_no: 3,
@@ -81,7 +85,7 @@ function App() {
 				ab_post: "Sr. Software Engineer",
 				ab_email: "nikita.bhangadiya@bacancy.com.com",
 				ab_image: <img className="photo" src="https://1.bp.blogspot.com/-Ybb3sd6z49Y/X8iVAuWrpvI/AAAAAAAAV0w/IYrlua9yum4WBerYjdeMaaWUjlZ_ezWPQCLcBGAsYHQ/s1920/Allu%2BArjun.jpg" alt="Image" styles="width:100%" />,
-				ab_contact:"12345678"
+				ab_contact: "12345678"
 			},
 		]
 
@@ -112,6 +116,12 @@ function App() {
 				sh_descr: "This is Link company that builds websites, web ",
 			},
 		]
+	const { token, setToken } = useToken();
+
+	if (!token) {
+		return <Login setToken={setToken} />
+	}
+
 	return (
 		<>
 			<Router>

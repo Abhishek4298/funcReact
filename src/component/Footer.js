@@ -50,7 +50,7 @@ const Footer = () => {
 								<h4>Follow Us</h4>
 								<ul className="social-network social-circle">
 									<li><a href="https://www.linkedin.com/in/abhibhavsar/" className="icoLinkedin" title="Linkedin"><i className="fa fa-linkedin"></i></a></li>
-									<li><a href="https://www.instagram.com/i.am_abhii/" class="icoInstagram" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+									<li><a href="https://www.instagram.com/i.am_abhii/" className="icoInstagram" title="Instagram"><i className="fa fa-instagram" aria-hidden="true"></i></a></li>
 									<li><a href="https://www.facebook.com/abhishek.bhavsar.5245/" className="icoFacebook" title="Facebook"><i className="fa fa-facebook"></i></a></li>
 								</ul>
 							</div>
