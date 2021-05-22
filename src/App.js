@@ -12,8 +12,9 @@ import Shop from './component/Shop';
 import FlowerAbout from './component/FlowerAbout';
 import SingleProduct from './component/SingleProduct';
 import Clock from './component/Clock';
-import Login from '../src/component/Login/Login';
+import Login from '../src/component/Authentication/Login';
 import useToken from './useToken';
+import Registration from '../src/component/Authentication/Registration';
 
 import {
 	BrowserRouter as Router,
@@ -24,7 +25,6 @@ import {
 
 function App() {
 	let initTodo;
-
 
 	if (localStorage.getItem("todos") === null) {
 		initTodo = [];
@@ -165,6 +165,9 @@ function App() {
 								<Clock theme="lightTheme" />
 							</>)
 					}}>
+					</Route>
+					<Route exact path="/registration">
+						<Registration />
 					</Route>
 				</Switch>
 				<Footer />

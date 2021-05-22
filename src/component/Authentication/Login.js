@@ -17,7 +17,6 @@ export default function Login({ setToken }) {
 	const [password, setPassword] = useState();
 
 	const handleSubmit = async e => {
-		console.log("Hello handle submit");
 		e.preventDefault();
 		const token = await loginUser({
 			username,
