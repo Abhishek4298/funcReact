@@ -40,6 +40,9 @@ export default function Login({ setToken }) {
 				<div>
 					<button type="submit">Submit</button>
 				</div>
+				<div className="etc-login-form">
+						<p>New User? <a href="/registration">click here</a></p>
+					</div>
 			</form>
 		</div>
 	)

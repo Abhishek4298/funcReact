@@ -1,15 +1,39 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
+async function register(credentials) {
+	return fetch('http://localhost:8080/login', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(credentials)
+	})
+		.then(data => data.json())
+}
+
 const Registration = () => {
 	const [username, setUsername] = useState();
 	const [email, setEmail] = useState();
 	const [password, setPassword] = useState();
-	const [conPassword, setConPassword] = useState();
+
+	const [data, setData] = useState([])
+
+	// const payload = {};
+	const payload = [];
 
 	const handleSubmit = async e => {
 		console.log("saving data");
 		e.preventDefault();
+		// payload.username = username
+		// payload.email = email
+		// payload.password = 
+		payload.push(username,email,password)
+		console.log("registration payload is :", payload);
+		setData(payload)
+		console.log("🚀  Registration ~ setData", setData)
+		// payload.push(username, email, password, conPassword);
+		// console.log("dataaa", payload);
 	}
 
 	return (<>
@@ -26,15 +50,11 @@ const Registration = () => {
 							</div>
 							<div className="form-group">
 								<label className="sr-only">Email</label>
-								<input type="text" onChange={e => setEmail(e.target.value)} className="form-control" placeholder="email" />
+								<input type="email" onChange={e => setEmail(e.target.value)} className="form-control" placeholder="email" />
 							</div>
 							<div className="form-group">
 								<label className="sr-only">Password</label>
 								<input type="password" onChange={e => setPassword(e.target.value)} className="form-control" placeholder="password" />
-							</div>
-							<div className="form-group">
-								<label className="sr-only">Password Confirm</label>
-								<input type="password" onChange={e => setConPassword(e.target.value)} className="form-control" placeholder="confirm password" />
 							</div>
 						</div>
 						<button type="submit" className="btn btn-success">Registration</button>
@@ -49,6 +69,4 @@ const Registration = () => {
 }
 
 export default Registration;
-
-
 
