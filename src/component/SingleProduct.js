@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const SingleProduct = () => {
 	return (
 		<>
@@ -33,18 +35,12 @@ const SingleProduct = () => {
 									</div>
 									<span className="review-no">41 reviews</span>
 								</div>
+								<h4 className="price">current price: <span>INR 180</span></h4>
 								<p className="product-description">Fresh red flowers send the clear and powerful message of intense romantic love. Red is the unquestioned color of passion and any red bouquet or red flower arrangement will communicate your strong and powerful love. Red flowers are the closest symbolic likeness to the heart. Red is the color of seduction and desire.
 .</p>
-								<h4 className="price">current price: <span>INR 180</span></h4>
-								<p className="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
-								<h5 className="sizes">sizes:
-					<span className="size" data-toggle="tooltip" title="small">s</span>
-									<span className="size" data-toggle="tooltip" title="medium">m</span>
-									<span className="size" data-toggle="tooltip" title="large">l</span>
-									<span className="size" data-toggle="tooltip" title="xtra large">xl</span>
-								</h5>
 								<div className="action">
 									<button className="add-to-cart btn btn-default" type="button">add to cart</button>
+									<Link className="add-to-cart btn btn-default" to="/payment">Buy <span className="sr-only">(current)</span></Link>
 									<button className="like btn btn-default" type="button"><span className="fa fa-heart"></span></button>
 								</div>
 							</div>

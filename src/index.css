@@ -1105,3 +1105,29 @@ label:hover:before {
   color: #aaaaaa;
   font-weight: bold;
 }
+
+/* nav header icons */
+.headerIcon{
+	padding-left:120ch;
+	padding-top: 1ch;
+}
+
+.container-fluid {
+	margin-top: 15px;
+}
+
+.container-fluid {
+	margin-top: 15px;
+}
+
+.payment-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* contact color */
+.color-contact{
+	background-color:lightgray;
+	font-weight: bold;
+}

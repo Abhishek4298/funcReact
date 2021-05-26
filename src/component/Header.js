@@ -2,11 +2,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from "react-router-dom";
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 const Header = ({ title, searchBar }) => {
 	//replace "a" tag with Link and "href" tag with to 
 	return (<>
-		<nav className="navbar navbar-expand-lg navbar-light bg-light">
+		<nav className="navbar navbar-expand-lg navbar-light bg-light ">
 			<Link className="navbar-brand" to="/">{title}</Link>
 			<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span className="navbar-toggler-icon"></span>
@@ -25,6 +27,14 @@ const Header = ({ title, searchBar }) => {
 					</li>
 					<li className="nav-item active">
 						<Link className="nav-link" to="/clock">Clock <span className="sr-only">(current)</span></Link>
+					</li>
+				</ul>
+				<ul className="navbar-nav mr-auto">
+					<li className="headerIcon">
+						<Link className="nav-link" to="/shop">	<ShoppingCartIcon /> <span className="sr-only">(current)</span></Link>
+					</li>
+					<li className="nav-link">
+						<Link className="nav-link {padding-left: 80px;}" to="/shop">	<AccountCircleIcon /> <span className="sr-only">(current)</span></Link>
 					</li>
 				</ul>
 				{searchBar ? <form className="form-inline my-2 my-lg-0">

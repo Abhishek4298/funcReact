@@ -1,16 +1,16 @@
 import SingleProduct from './SingleProduct';
 import React, { useState } from 'react';
-
-
+import PhoneIcon from '@material-ui/icons/Phone';
 const FlowerAbout = ({ about_page }) => {
-	const [contact, setContact] = useState({});	
+	const [contact, setContact] = useState({});
 	return (<>
 		<div className="about-section">
 			<h1>About Us Page</h1>
 			<p>Some text about who we are and what we do.</p>
 			<p>Resize the browser window to see that this page is responsive by the way.</p>
 		</div>
-		<h2 styles="text-align:center">Our Team</h2>
+
+		<h2 styles="text-align:center">GFC Team</h2>
 		<div className="row">
 			{
 				about_page.map((about) => {
@@ -22,14 +22,13 @@ const FlowerAbout = ({ about_page }) => {
 									<h3>{about.ab_post}</h3>
 									{about.ab_image}
 									<p><button className="button" onClick={() => setContact(about)}>Contact</button></p>
-									{about.ab_no === contact.ab_no && (<span>{contact.ab_contact}</span>)}
-								</div>	
+									{about.ab_no === contact.ab_no && (<span className="color-contact"><PhoneIcon />{contact.ab_contact}</span>)}
+								</div>
 							</div>
 						</div>
 					)
 				})
 			}
-
 		</div>
 	</>);
 }

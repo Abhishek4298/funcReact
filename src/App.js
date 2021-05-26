@@ -15,6 +15,7 @@ import Clock from './component/Clock';
 import Login from '../src/component/Authentication/Login';
 import useToken from './useToken';
 import Registration from '../src/component/Authentication/Registration';
+import Payment from '../src/component/Payment';
 
 import {
 	BrowserRouter as Router,
@@ -65,27 +66,27 @@ function App() {
 		[
 			{
 				ab_no: 1,
-				ab_name: "Abhishek",
-				ab_post: "Software Engineer",
-				ab_email: "abhishek.bhavsar@bacancy.com",
-				ab_image: <img className="photo" src="https://1.bp.blogspot.com/-Ybb3sd6z49Y/X8iVAuWrpvI/AAAAAAAAV0w/IYrlua9yum4WBerYjdeMaaWUjlZ_ezWPQCLcBGAsYHQ/s1920/Allu%2BArjun.jpg" alt="Image" styles="width:100%" />,
-				ab_contact: "7227885771"
+				ab_name: "Khushboo",
+				ab_post: "Manager",
+				ab_email: "nikita.bhangadiya@bacancy.com.com",
+				ab_image: <img className="photo" src="https://cdn2.iconfinder.com/data/icons/avatars-2-7/128/37-512.png" alt="Image" styles="width:100%" />,
+				ab_contact: "12345678"
 			},
 			{
 				ab_no: 2,
 				ab_name: "Darshan",
 				ab_post: "Sr. Software Engineer",
 				ab_email: "darshan.gauswami@bacancy.com",
-				ab_image: <img className="photo" src="https://1.bp.blogspot.com/-Ybb3sd6z49Y/X8iVAuWrpvI/AAAAAAAAV0w/IYrlua9yum4WBerYjdeMaaWUjlZ_ezWPQCLcBGAsYHQ/s1920/Allu%2BArjun.jpg" alt="Image" styles="width:100%" />,
+				ab_image: <img className="photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR91lQXh61zr8mPF0F9Ikqsi7iMFeb6kcrX45MwobCVSY7zOaqDXsZu7wtwlE7lWJNCKZw&usqp=CAU	" alt="Image" styles="width:100%" />,
 				ab_contact: "8141393254"
 			},
 			{
 				ab_no: 3,
-				ab_name: "Nikita",
-				ab_post: "Sr. Software Engineer",
-				ab_email: "nikita.bhangadiya@bacancy.com.com",
-				ab_image: <img className="photo" src="https://1.bp.blogspot.com/-Ybb3sd6z49Y/X8iVAuWrpvI/AAAAAAAAV0w/IYrlua9yum4WBerYjdeMaaWUjlZ_ezWPQCLcBGAsYHQ/s1920/Allu%2BArjun.jpg" alt="Image" styles="width:100%" />,
-				ab_contact: "12345678"
+				ab_name: "Abhishek",
+				ab_post: "Software Engineer",
+				ab_email: "abhishek.bhavsar@bacancy.com",
+				ab_image: <img className="photo" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="Image" styles="width:100%" />,
+				ab_contact: "7227885771"
 			},
 		]
 
@@ -168,6 +169,9 @@ function App() {
 					</Route>
 					<Route exact path="/registration">
 						<Registration />
+					</Route>
+					<Route exact path="/payment">
+						<Payment />
 					</Route>
 				</Switch>
 				<Footer />
