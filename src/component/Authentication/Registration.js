@@ -28,10 +28,9 @@ const Registration = () => {
 		// payload.username = username
 		// payload.email = email
 		// payload.password = 
-		payload.push(username,email,password)
-		console.log("registration payload is :", payload);
+		payload.push(username, email, password)
 		setData(payload)
-		console.log("🚀  Registration ~ setData", setData)
+		console.log("🚀  Registration ~ setData", data)
 		// payload.push(username, email, password, conPassword);
 		// console.log("dataaa", payload);
 	}
@@ -62,6 +61,7 @@ const Registration = () => {
 					<div className="etc-login-form">
 						<p>already have an account? <a href="/login">login here</a></p>
 					</div>
+					{data.length > 1 && data.map((el) => <h1>{el}{console.log("Helllo",typeof el)}</h1>)}
 				</form>
 			</div>
 		</div>
