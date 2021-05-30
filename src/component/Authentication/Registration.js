@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-async function register(credentials) {
-	return fetch('http://localhost:8080/login', {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify(credentials)
-	})
-		.then(data => data.json())
-}
+// async function registerUser(data) {
+// 	return fetch('http://localhost:8080/login', {
+// 		method: 'POST',
+// 		headers: {
+// 			'Content-Type': 'application/json'
+// 		},
+// 		body: {
+// 			"first_name": this.firstName.value
+// 		}
+// 	})
+// 		.then(data => data.json())
+// }
 
 const Registration = () => {
 	const [username, setUsername] = useState();
@@ -22,18 +24,34 @@ const Registration = () => {
 	// const payload = {};
 	const payload = [];
 
-	const handleSubmit = async e => {
+	// const handleSubmit = async e => {
+	// 	e.preventDefault();
+	// 	// payload.username = username
+	// 	// payload.email = email
+	// 	// payload.password = 
+	// 	// const token = await loginUser({
+
+	// 	// });
+	// 	console.log("🚀  Registration ~ setData", data)
+	// 	// payload.push(username, email, password, conPassword);
+	// 	// console.log("dataaa", payload);
+	// }
+	const handleSubmit = (e) => {
 		console.log("saving data");
 		e.preventDefault();
-		// payload.username = username
-		// payload.email = email
-		// payload.password = 
 		payload.push(username, email, password)
 		setData(payload)
-		console.log("🚀  Registration ~ setData", data)
-		// payload.push(username, email, password, conPassword);
-		// console.log("dataaa", payload);
-	}
+		console.log('Goood');
+		fetch('http://localhost:8080/registration', {
+			method: 'post',
+			headers: { 'Content-Type': 'application/json' },
+			body: {
+				"username": payload[0],
+				"email": payload[1],
+				"password": payload[2],
+			}
+		});
+	};
 
 	return (<>
 		<div className="text-center" styles="padding:50px 0">
@@ -61,7 +79,7 @@ const Registration = () => {
 					<div className="etc-login-form">
 						<p>already have an account? <a href="/login">login here</a></p>
 					</div>
-					{data.length > 1 && data.map((el) => <h1>{el}{console.log("Helllo",typeof el)}</h1>)}
+					{data.length > 1 && data.map((el) => <h1 key={el.no}>{el}{console.log("Helllo", typeof el)}</h1>)}
 				</form>
 			</div>
 		</div>
