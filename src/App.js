@@ -16,6 +16,7 @@ import Login from '../src/component/Authentication/Login';
 import useToken from './useToken';
 import Registration from '../src/component/Authentication/Registration';
 import Payment from '../src/component/Payment';
+import ReactRouterLearn from '../src/component/ReactRouterLearn';
 
 import {
 	BrowserRouter as Router,
@@ -149,7 +150,13 @@ function App() {
 							</>)
 					}}>
 					</Route>
-
+					<Route exact path="/reactrouterlearn" render={() => {
+						return (
+							<>
+								<ReactRouterLearn />
+							</>)
+					}}>
+					</Route>
 					<Route exact path="/shop" render={() => {
 						return (
 							<>
