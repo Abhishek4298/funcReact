@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 async function loginUser(credentials) {
 	return fetch('http://localhost:8080/login', {
-		method: 'POST',
+		method: 'GET',
 		headers: {
 			'Content-Type': 'application/json'
 		},
-		body: JSON.stringify(credentials)
+		// body: JSON.stringify(credentials)
 	})
 		.then(data => data.json())
 }

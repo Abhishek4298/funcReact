@@ -1,3 +1,4 @@
+
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
@@ -12,8 +13,9 @@ let sequelize;
 if (config.url) {
   sequelize = new Sequelize(config.url, config);
 } else {
-  sequelize = new Sequelize(config.database, config.username, config.password, config);
+  sequelize = new Sequelize(config.DB_NAME, config.DB_NAME, config.DB_PASS, config);
 }
+console.log("🚀 ~ file: index.js ~ line 17 ~ sequelize", sequelize)
 
 fs
   .readdirSync(__dirname)
@@ -21,7 +23,8 @@ fs
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
   })
   .forEach(file => {
-    const model = sequelize['import'](path.join(__dirname, file));
+		const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes)
+    console.log("🚀 ~ file: index.js ~ line 27 ~ model", model)
     db[model.name] = model;
   });
 
