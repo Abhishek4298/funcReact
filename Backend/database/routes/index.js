@@ -5,7 +5,7 @@ const userController = require("../controller/User.controller");
 
 router.get("/list", userController.list);
 
-// router.post("/insert", userController.insert);
+router.post("/insert", userController.create);
 
 // router.get("/getById/:id", userController.getById);
 

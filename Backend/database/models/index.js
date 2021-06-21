@@ -15,7 +15,6 @@ if (config.url) {
 } else {
   sequelize = new Sequelize(config.DB_NAME, config.DB_NAME, config.DB_PASS, config);
 }
-console.log("🚀 ~ file: index.js ~ line 17 ~ sequelize", sequelize)
 
 fs
   .readdirSync(__dirname)
@@ -24,7 +23,6 @@ fs
   })
   .forEach(file => {
 		const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes)
-    console.log("🚀 ~ file: index.js ~ line 27 ~ model", model)
     db[model.name] = model;
   });
 

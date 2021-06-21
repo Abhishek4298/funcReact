@@ -3,22 +3,22 @@ const sequelize = require('sequelize');
 
 module.exports = (Sequelize, DataTypes) => {
   const User = Sequelize.define(
-    'User',
+    'Users',
     {
 			username: {
-				type: Sequelize.STRING,
+				type: DataTypes.STRING,
 				allowNull: false,
 			},
 			email: {
-				type: Sequelize.STRING,
+				type: DataTypes.STRING,
 				allowNull: false,
 			},
 			password: {
-				type: Sequelize.STRING,
+				type: DataTypes.STRING,
 				allowNull: false,
 			}
     },
-    { timestamps: true, tableName: 'user' },
+    { timestamps: true, tableName: 'Users' },
   );
   return User;
 };

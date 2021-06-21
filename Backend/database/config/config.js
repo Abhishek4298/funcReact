@@ -8,20 +8,20 @@ const x = {
     host: 'localhost',
     dialect: 'postgres',
   },
-  // prod: {
-	// 	username: process.env.DB_USER,
-  //   password: process.env.DB_PASS,
-  //   database: process.env.DB_NAME,
-  //   host: process.env.DB_HOST,
-  //   dialect: process.env.DB_DIALECT,
-  // },
-  // stag: {
-	// 	username: process.env.DB_USER,
-  //   password: process.env.DB_PASS,
-  //   database: process.env.DB_NAME,
-  //   host: process.env.DB_HOST,
-  //   dialect: process.env.DB_DIALECT,
-  // },
+  prod: {
+		username: 'postgres',
+    password: 'secret123',
+    database: 'postgres',
+    host: 'localhost',
+    dialect: 'postgres',
+  },
+  stag: {
+		username: 'postgres',
+    password: 'secret123',
+    database: 'postgres',
+    host: 'localhost',
+    dialect: 'postgres',
+  },
 };
-console.log("Aasdasd",x.development);
+
 module.exports = x;

@@ -22,7 +22,7 @@ const Registration = () => {
 	const [data, setData] = useState([])
 
 	// const payload = {};
-	const payload = [];
+	let payload = [];
 
 	// const handleSubmit = async e => {
 	// 	e.preventDefault();
@@ -39,18 +39,18 @@ const Registration = () => {
 	const handleSubmit = (e) => {
 		console.log("saving data");
 		e.preventDefault();
-		payload.push(username, email, password)
-		setData(payload)
-		console.log('Goood');
-		fetch('http://localhost:8080/registration', {
+		payload.push({ username, email, password })
+		JSON.stringify(payload)
+		const data = fetch('http://localhost:8080/insert', {
 			method: 'post',
 			headers: { 'Content-Type': 'application/json' },
 			body: {
-				"username": payload[0],
-				"email": payload[1],
-				"password": payload[2],
+				username: payload[0].username,
+				email: payload[0].email,
+				password: payload[0].password,
 			}
 		});
+		console.log("🚀 ~ file: Registration.js ~ line 54 ~ handleSubmit ~ data", JSON.parse(data))
 	};
 
 	return (<>
@@ -79,7 +79,7 @@ const Registration = () => {
 					<div className="etc-login-form">
 						<p>already have an account? <a href="/login">login here</a></p>
 					</div>
-					{data.length > 1 && data.map((el) => <h1 key={el.no}>{el}{console.log("Helllo", typeof el)}</h1>)}
+					{data.length > 1 && data.map((el) => <h1 key={el.no}>{el}</h1>)}
 				</form>
 			</div>
 		</div>
