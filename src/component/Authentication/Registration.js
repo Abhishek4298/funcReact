@@ -7,31 +7,21 @@ const Registration = () => {
 
 
 	// const payload = {};
-	let payload = [];
+	let payload = {};
+	payload.username = username;
+	payload.email = email;
+	payload.password = password;
 
-	// const handleSubmit = async e => {
-	// 	e.preventDefault();
-	// 	// payload.username = username
-	// 	// payload.email = email
-	// 	// payload.password =
-	// 	// const token = await loginUser({
-
-	// 	// });
-	// 	console.log("🚀  Registration ~ setData", data)
-	// 	// payload.push(username, email, password, conPassword);
-	// 	// console.log("dataaa", payload);
-	// }
 	const handleSubmit = async (e) => {
 		console.log("saving data");
 		e.preventDefault();
-		payload.push({ username, email, password })
 		await fetch('http://localhost:8080/insert', {
 			method: 'POST',
 			headers: {
 				'Accept': 'application/json',
 				'Content-Type': 'application/json'
 			},
-			body: JSON.stringify({ username, email, password })
+			body: JSON.stringify(payload)
 		});
 	};
 
@@ -61,7 +51,6 @@ const Registration = () => {
 					<div className="etc-login-form">
 						<p>already have an account? <a href="/login">login here</a></p>
 					</div>
-					{data.length > 1 && data.map((el) => <h1 key={el.no}>{el}</h1>)}
 				</form>
 			</div>
 		</div>
