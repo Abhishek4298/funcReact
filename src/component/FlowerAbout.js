@@ -17,17 +17,17 @@ const FlowerAbout = ({ about_page }) => {
 			<button onClick={() => handleClick('en')} >
 				English
 			</button>
-			<button onClick={() => handleClick('ko')} >
-				Korean
-			</button>
 			<button onClick={() => handleClick('chi')} >
 				Chinese
 			</button>
-			<button onClick={() => handleClick('ger')} >
-				German
-			</button>
 			<button onClick={() => handleClick('hin')} >
 				Hindi
+			</button>
+			<button onClick={() => handleClick('spa')} >
+				Spanish
+			</button>
+			<button onClick={() => handleClick('guj')} >
+				Gujrati
 			</button>
 		</nav>
 		<div className="about-section">
