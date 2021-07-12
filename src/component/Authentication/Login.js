@@ -1,20 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-async function loginUser(credentials) {
+async function loginUser() {
 	return fetch('http://localhost:8080/login', {
 		method: 'GET',
 		headers: {
 			'Content-Type': 'application/json'
 		},
-		// body: JSON.stringify(credentials)
 	})
-		.then(data => data.json())
+		.then(data => console.log("1111111111111----",data.json()))
 }
 
 export default function Login({ setToken }) {
 	const [username, setUserName] = useState();
 	const [password, setPassword] = useState();
+	const fetchData = () => {
+		return fetch("http://localhost:8080/list")
+			.then((response) => response.json())
+			.then((data) => data.map((el)=>{
+					return console.log("username",el.username);
+			}));
+	}
+	useEffect(() => {
+		fetchData();
+	}, []);
 
 	const handleSubmit = async e => {
 		e.preventDefault();
@@ -41,8 +50,8 @@ export default function Login({ setToken }) {
 					<button type="submit">Submit</button>
 				</div>
 				<div className="etc-login-form">
-						<p>New User? <a href="/registration">click here</a></p>
-					</div>
+					<p>New User? <a href="/registration">click here</a></p>
+				</div>
 			</form>
 		</div>
 	)
