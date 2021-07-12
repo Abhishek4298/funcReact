@@ -1,25 +1,10 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-
-// async function registerUser(data) {
-// 	return fetch('http://localhost:8080/login', {
-// 		method: 'POST',
-// 		headers: {
-// 			'Content-Type': 'application/json'
-// 		},
-// 		body: {
-// 			"first_name": this.firstName.value
-// 		}
-// 	})
-// 		.then(data => data.json())
-// }
 
 const Registration = () => {
 	const [username, setUsername] = useState();
 	const [email, setEmail] = useState();
 	const [password, setPassword] = useState();
 
-	const [data, setData] = useState([])
 
 	// const payload = {};
 	let payload = [];
@@ -28,7 +13,7 @@ const Registration = () => {
 	// 	e.preventDefault();
 	// 	// payload.username = username
 	// 	// payload.email = email
-	// 	// payload.password = 
+	// 	// payload.password =
 	// 	// const token = await loginUser({
 
 	// 	// });
@@ -36,21 +21,18 @@ const Registration = () => {
 	// 	// payload.push(username, email, password, conPassword);
 	// 	// console.log("dataaa", payload);
 	// }
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		console.log("saving data");
 		e.preventDefault();
 		payload.push({ username, email, password })
-		JSON.stringify(payload)
-		const data = fetch('http://localhost:8080/insert', {
-			method: 'post',
-			headers: { 'Content-Type': 'application/json' },
-			body: {
-				username: payload[0].username,
-				email: payload[0].email,
-				password: payload[0].password,
-			}
+		await fetch('http://localhost:8080/insert', {
+			method: 'POST',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ username, email, password })
 		});
-		console.log("🚀 ~ file: Registration.js ~ line 54 ~ handleSubmit ~ data", JSON.parse(data))
 	};
 
 	return (<>
