@@ -38,11 +38,23 @@
 }
 
 .wrapper {
-	padding: 20px;
+  padding: 20px;
 }
 
 .login-wrapper {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ /* form formik */
+input[type="text"],
+input[type="number"],
+input[type="email"] {
+  display: block;
+  width: 400px;
+}
+
+.error {
+  color: red;
 }
