@@ -1,4 +1,3 @@
-import SingleProduct from './SingleProduct';
 import React, { useState } from 'react';
 import PhoneIcon from '@material-ui/icons/Phone';
 const FlowerAbout = ({ about_page }) => {

@@ -1,31 +1,36 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
 
 const Shop = ({ shop_page }) => {
-	return (
-		<>
-			<div className="container mt-2">
-				<div className="row">
-					{
-						shop_page.map((shop) => {
-							return (
-								<div className="col-md-3 col-sm-6 item" >
-									<div className="card item-card card-block">
-										<h4 className="item-card-title text-right"><i className="material-icons">{shop.sh_title}
-										</i></h4>
-										{shop.sh_image}
-										<h5 className="card-title  mt-3 mb-3">{shop.sh_name}</h5>
-										<p className="card-text">This is Link company that builds websites, web .</p>
-										<Link to="/singleProduct" className="btn btn-primary sm">Buy</Link>
-									</div>
-								</div>
-							)
-						})
-					}
-				</div>
-			</div>
-		</>
-	);
-}
+  return (
+    <div className="container mt-4">
+      <div className="row">
+        {shop_page.map((shop, index) => (
+          <div key={index} className="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div className="card h-100">
+              <img
+                src={shop?.sh_image.props.src}
+                className="card-img-top"
+                alt={shop.sh_name}
+              />
+              <div className="card-body">
+                <h5 className="card-title">{shop.sh_name}</h5>
+                <p className="card-text">
+                  This is a description of the product. You can add more details
+                  here.
+                </p>
+              </div>
+              <div className="card-footer">
+                <Link to="/singleProduct" className="btn btn-primary btn-block">
+                  Buy Now
+                </Link>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default Shop;
